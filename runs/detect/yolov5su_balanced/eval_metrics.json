@@ -1,0 +1,54 @@
+{
+  "model": "yolov5su",
+  "run_name": "yolov5su_balanced",
+  "train_config": "configs\\train_balanced.yaml",
+  "weights": "B:\\myProjects\\yolo-testing-project\\runs\\detect\\yolov5su_balanced\\weights\\best.pt",
+  "finished_at": "2026-11-11T22:44:37.059332+00:00",
+  "success": true,
+  "gate_reason": "ok",
+  "balanced": true,
+  "val": {
+    "map50": 0.8364401770556311,
+    "map50_95": 0.6481122651108311,
+    "precision": 0.8069422294046364,
+    "recall": 0.8214758712290005,
+    "per_class": {
+      "benign": {
+        "precision": 0.9174375631348411,
+        "recall": 0.9180348845901749,
+        "map50": 0.9537445369133849,
+        "map50_95": 0.8026624770987041
+      },
+      "malignant": {
+        "precision": 0.6964468956744317,
+        "recall": 0.7249168578678261,
+        "map50": 0.7191358171978772,
+        "map50_95": 0.4935620531229582
+      }
+    },
+    "malignant_recall": 0.7249168578678261,
+    "benign_recall": 0.9180348845901749
+  },
+  "test": {
+    "map50": 0.8142414397052261,
+    "map50_95": 0.6502948951916465,
+    "precision": 0.7541531522856598,
+    "recall": 0.848165022942547,
+    "per_class": {
+      "benign": {
+        "precision": 0.8834268524637191,
+        "recall": 0.948078297633346,
+        "map50": 0.9451077045270962,
+        "map50_95": 0.7953007316827311
+      },
+      "malignant": {
+        "precision": 0.6248794521076005,
+        "recall": 0.7482517482517482,
+        "map50": 0.683375174883356,
+        "map50_95": 0.5052890587005624
+      }
+    },
+    "malignant_recall": 0.7482517482517482,
+    "benign_recall": 0.948078297633346
+  }
+}

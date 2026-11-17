@@ -1,0 +1,54 @@
+{
+  "model": "yolov8s",
+  "run_name": "yolov8s_balanced",
+  "train_config": "configs\\train_balanced.yaml",
+  "weights": "B:\\myProjects\\yolo-testing-project\\runs\\detect\\yolov8s_balanced\\weights\\best.pt",
+  "finished_at": "2026-11-17T01:27:12.905279+00:00",
+  "success": true,
+  "gate_reason": "ok",
+  "balanced": true,
+  "val": {
+    "map50": 0.8313809454219298,
+    "map50_95": 0.6417113368855556,
+    "precision": 0.7767081441453969,
+    "recall": 0.82895378629455,
+    "per_class": {
+      "benign": {
+        "precision": 0.888900724024951,
+        "recall": 0.9380378657487092,
+        "map50": 0.9476166821922453,
+        "map50_95": 0.7979553299277822
+      },
+      "malignant": {
+        "precision": 0.6645155642658427,
+        "recall": 0.7198697068403909,
+        "map50": 0.7151452086516142,
+        "map50_95": 0.48546734384332896
+      }
+    },
+    "malignant_recall": 0.7198697068403909,
+    "benign_recall": 0.9380378657487092
+  },
+  "test": {
+    "map50": 0.8133072530639365,
+    "map50_95": 0.6564758819273167,
+    "precision": 0.7735666472299688,
+    "recall": 0.8109702840744069,
+    "per_class": {
+      "benign": {
+        "precision": 0.8941770874981518,
+        "recall": 0.9443424261695719,
+        "map50": 0.9398724427889397,
+        "map50_95": 0.7971680023969924
+      },
+      "malignant": {
+        "precision": 0.6529562069617858,
+        "recall": 0.677598141979242,
+        "map50": 0.6867420633389332,
+        "map50_95": 0.515783761457641
+      }
+    },
+    "malignant_recall": 0.677598141979242,
+    "benign_recall": 0.9443424261695719
+  }
+}

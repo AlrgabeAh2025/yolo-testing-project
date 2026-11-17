@@ -1,0 +1,507 @@
+{
+  "conf_threshold": 0.25,
+  "iou_threshold": 0.5,
+  "decision": "top1",
+  "image_source": "processed",
+  "split": "test",
+  "mal_thr": null,
+  "ben_thr": null,
+  "test_images": 1485,
+  "gate": {
+    "malignant_accuracy_min": 0.75,
+    "malignant_to_benign_max": 0.2,
+    "benign_to_malignant_max": 0.1,
+    "overall_class_accuracy_min": 0.85,
+    "malignant_recall_drop_max": 0.05
+  },
+  "models": {
+    "yolov5su_balanced": {
+      "model": "yolov5su_balanced",
+      "weights": "B:\\myProjects\\yolo-testing-project\\runs\\detect\\yolov5su_balanced\\weights\\best.pt",
+      "decision": "top1",
+      "image_source": "processed",
+      "mal_thr": null,
+      "ben_thr": null,
+      "n_images": 1485,
+      "n_benign": 1199,
+      "n_malignant": 286,
+      "confusion": {
+        "benign->benign": 1104,
+        "benign->malignant": 94,
+        "benign->miss": 1,
+        "malignant->malignant": 205,
+        "malignant->benign": 79,
+        "malignant->miss": 2
+      },
+      "overall_class_accuracy": 0.8814814814814815,
+      "benign_accuracy": 0.920767306088407,
+      "malignant_accuracy": 0.7167832167832168,
+      "malignant_precision_image": 0.68561872909699,
+      "malignant_recall_image": 0.7167832167832168,
+      "mean_conf_correct": 0.8155143317873921,
+      "mean_conf_confused": 0.7126212740220086,
+      "failure_examples": {
+        "benign->malignant": [
+          {
+            "image": "ISIC_0024382",
+            "conf": 0.6415863633155823
+          },
+          {
+            "image": "ISIC_0024424",
+            "conf": 0.830929160118103
+          },
+          {
+            "image": "ISIC_0024494",
+            "conf": 0.6815391778945923
+          },
+          {
+            "image": "ISIC_0024711",
+            "conf": 0.41578322649002075
+          },
+          {
+            "image": "ISIC_0024757",
+            "conf": 0.5759714245796204
+          },
+          {
+            "image": "ISIC_0024947",
+            "conf": 0.33518487215042114
+          },
+          {
+            "image": "ISIC_0024973",
+            "conf": 0.7977043390274048
+          },
+          {
+            "image": "ISIC_0025008",
+            "conf": 0.7625939249992371
+          },
+          {
+            "image": "ISIC_0025027",
+            "conf": 0.6682467460632324
+          },
+          {
+            "image": "ISIC_0025157",
+            "conf": 0.4785296618938446
+          },
+          {
+            "image": "ISIC_0025228",
+            "conf": 0.39696863293647766
+          },
+          {
+            "image": "ISIC_0025931",
+            "conf": 0.5491150617599487
+          }
+        ],
+        "malignant->benign": [
+          {
+            "image": "ISIC_0024400",
+            "conf": 0.7029125690460205
+          },
+          {
+            "image": "ISIC_0024410",
+            "conf": 0.8962163329124451
+          },
+          {
+            "image": "ISIC_0024481",
+            "conf": 0.8718405961990356
+          },
+          {
+            "image": "ISIC_0024496",
+            "conf": 0.6295076012611389
+          },
+          {
+            "image": "ISIC_0024654",
+            "conf": 0.8303936719894409
+          },
+          {
+            "image": "ISIC_0024675",
+            "conf": 0.8306266069412231
+          },
+          {
+            "image": "ISIC_0024898",
+            "conf": 0.8803714513778687
+          },
+          {
+            "image": "ISIC_0024918",
+            "conf": 0.8994780778884888
+          },
+          {
+            "image": "ISIC_0025783",
+            "conf": 0.8690630793571472
+          },
+          {
+            "image": "ISIC_0025964",
+            "conf": 0.8649530410766602
+          },
+          {
+            "image": "ISIC_0026247",
+            "conf": 0.822155237197876
+          },
+          {
+            "image": "ISIC_0026506",
+            "conf": 0.9017082452774048
+          }
+        ],
+        "malignant->miss": [
+          {
+            "image": "ISIC_0026798",
+            "conf": 0.0
+          },
+          {
+            "image": "ISIC_0028814",
+            "conf": 0.0
+          }
+        ],
+        "benign->miss": [
+          {
+            "image": "ISIC_0030677",
+            "conf": 0.0
+          }
+        ]
+      },
+      "val_test_gap": {
+        "map50_val": 0.8364401770556311,
+        "map50_test": 0.8142414397052261,
+        "map50_drop": 0.022198737350405007,
+        "malignant_recall_val": 0.7249168578678261,
+        "malignant_recall_test": 0.7482517482517482,
+        "malignant_recall_drop": -0.023334890383922113,
+        "benign_recall_val": 0.9180348845901749,
+        "benign_recall_test": 0.948078297633346
+      },
+      "defects": [
+        "High malignant\u2192benign confusion (27.6%): model often calls cancer benign.",
+        "Class imbalance bias: much stronger on benign than malignant (benign_acc=92.1%, malignant_acc=71.7%)."
+      ],
+      "gate_pass": false,
+      "gate_reasons": [
+        "malignant_accuracy 0.717 < 0.75",
+        "malignant\u2192benign 0.276 > 0.2"
+      ],
+      "failure_mosaic": "B:\\myProjects\\yolo-testing-project\\runs\\generalization\\yolov5su_balanced_failures.png"
+    },
+    "yolov8s_balanced": {
+      "model": "yolov8s_balanced",
+      "weights": "B:\\myProjects\\yolo-testing-project\\runs\\detect\\yolov8s_balanced\\weights\\best.pt",
+      "decision": "top1",
+      "image_source": "processed",
+      "mal_thr": null,
+      "ben_thr": null,
+      "n_images": 1485,
+      "n_benign": 1199,
+      "n_malignant": 286,
+      "confusion": {
+        "benign->benign": 1111,
+        "benign->malignant": 84,
+        "benign->miss": 4,
+        "malignant->malignant": 197,
+        "malignant->benign": 89,
+        "malignant->miss": 0
+      },
+      "overall_class_accuracy": 0.8808080808080808,
+      "benign_accuracy": 0.926605504587156,
+      "malignant_accuracy": 0.6888111888111889,
+      "malignant_precision_image": 0.701067615658363,
+      "malignant_recall_image": 0.6888111888111889,
+      "mean_conf_correct": 0.8307915873574919,
+      "mean_conf_confused": 0.7302025446312965,
+      "failure_examples": {
+        "malignant->benign": [
+          {
+            "image": "ISIC_0024400",
+            "conf": 0.7695395946502686
+          },
+          {
+            "image": "ISIC_0024410",
+            "conf": 0.8817698359489441
+          },
+          {
+            "image": "ISIC_0024481",
+            "conf": 0.8666998744010925
+          },
+          {
+            "image": "ISIC_0024496",
+            "conf": 0.7714900970458984
+          },
+          {
+            "image": "ISIC_0024522",
+            "conf": 0.6323702931404114
+          },
+          {
+            "image": "ISIC_0024654",
+            "conf": 0.7939625978469849
+          },
+          {
+            "image": "ISIC_0024675",
+            "conf": 0.7193384766578674
+          },
+          {
+            "image": "ISIC_0024898",
+            "conf": 0.8997554183006287
+          },
+          {
+            "image": "ISIC_0024918",
+            "conf": 0.9125077724456787
+          },
+          {
+            "image": "ISIC_0025260",
+            "conf": 0.5695844888687134
+          },
+          {
+            "image": "ISIC_0025285",
+            "conf": 0.3566107451915741
+          },
+          {
+            "image": "ISIC_0025783",
+            "conf": 0.8596324324607849
+          }
+        ],
+        "benign->malignant": [
+          {
+            "image": "ISIC_0024424",
+            "conf": 0.8681588172912598
+          },
+          {
+            "image": "ISIC_0024711",
+            "conf": 0.46641820669174194
+          },
+          {
+            "image": "ISIC_0024973",
+            "conf": 0.7559579014778137
+          },
+          {
+            "image": "ISIC_0025027",
+            "conf": 0.7207912802696228
+          },
+          {
+            "image": "ISIC_0025157",
+            "conf": 0.6888502836227417
+          },
+          {
+            "image": "ISIC_0025517",
+            "conf": 0.5170425176620483
+          },
+          {
+            "image": "ISIC_0026015",
+            "conf": 0.5484833717346191
+          },
+          {
+            "image": "ISIC_0026123",
+            "conf": 0.5454503297805786
+          },
+          {
+            "image": "ISIC_0026159",
+            "conf": 0.7428006529808044
+          },
+          {
+            "image": "ISIC_0026223",
+            "conf": 0.8525697588920593
+          },
+          {
+            "image": "ISIC_0026403",
+            "conf": 0.661838173866272
+          },
+          {
+            "image": "ISIC_0026456",
+            "conf": 0.515628457069397
+          }
+        ],
+        "benign->miss": [
+          {
+            "image": "ISIC_0025781",
+            "conf": 0.0
+          },
+          {
+            "image": "ISIC_0026584",
+            "conf": 0.0
+          },
+          {
+            "image": "ISIC_0029040",
+            "conf": 0.0
+          },
+          {
+            "image": "ISIC_0030677",
+            "conf": 0.0
+          }
+        ]
+      },
+      "val_test_gap": {
+        "map50_val": 0.8313809454219298,
+        "map50_test": 0.8133072530639365,
+        "map50_drop": 0.018073692357993276,
+        "malignant_recall_val": 0.7198697068403909,
+        "malignant_recall_test": 0.677598141979242,
+        "malignant_recall_drop": 0.042271564861148914,
+        "benign_recall_val": 0.9380378657487092,
+        "benign_recall_test": 0.9443424261695719
+      },
+      "defects": [
+        "High malignant\u2192benign confusion (31.1%): model often calls cancer benign.",
+        "Class imbalance bias: much stronger on benign than malignant (benign_acc=92.7%, malignant_acc=68.9%)."
+      ],
+      "gate_pass": false,
+      "gate_reasons": [
+        "malignant_accuracy 0.689 < 0.75",
+        "malignant\u2192benign 0.311 > 0.2"
+      ],
+      "failure_mosaic": "B:\\myProjects\\yolo-testing-project\\runs\\generalization\\yolov8s_balanced_failures.png"
+    },
+    "yolov3-tinyu_balanced": {
+      "model": "yolov3-tinyu_balanced",
+      "weights": "B:\\myProjects\\yolo-testing-project\\runs\\detect\\yolov3-tinyu_balanced\\weights\\best.pt",
+      "decision": "top1",
+      "image_source": "processed",
+      "mal_thr": null,
+      "ben_thr": null,
+      "n_images": 1485,
+      "n_benign": 1199,
+      "n_malignant": 286,
+      "confusion": {
+        "benign->benign": 1145,
+        "benign->malignant": 54,
+        "benign->miss": 0,
+        "malignant->malignant": 157,
+        "malignant->benign": 127,
+        "malignant->miss": 2
+      },
+      "overall_class_accuracy": 0.8767676767676768,
+      "benign_accuracy": 0.9549624687239366,
+      "malignant_accuracy": 0.548951048951049,
+      "malignant_precision_image": 0.7440758293838863,
+      "malignant_recall_image": 0.548951048951049,
+      "mean_conf_correct": 0.7412440660087743,
+      "mean_conf_confused": 0.6582898453124979,
+      "failure_examples": {
+        "malignant->benign": [
+          {
+            "image": "ISIC_0024310",
+            "conf": 0.39192721247673035
+          },
+          {
+            "image": "ISIC_0024400",
+            "conf": 0.7357764840126038
+          },
+          {
+            "image": "ISIC_0024410",
+            "conf": 0.8037320971488953
+          },
+          {
+            "image": "ISIC_0024411",
+            "conf": 0.6383087635040283
+          },
+          {
+            "image": "ISIC_0024481",
+            "conf": 0.772266685962677
+          },
+          {
+            "image": "ISIC_0024496",
+            "conf": 0.7202522158622742
+          },
+          {
+            "image": "ISIC_0024522",
+            "conf": 0.3980494439601898
+          },
+          {
+            "image": "ISIC_0024654",
+            "conf": 0.7009592652320862
+          },
+          {
+            "image": "ISIC_0024675",
+            "conf": 0.8014770150184631
+          },
+          {
+            "image": "ISIC_0024756",
+            "conf": 0.6014136672019958
+          },
+          {
+            "image": "ISIC_0024898",
+            "conf": 0.7895918488502502
+          },
+          {
+            "image": "ISIC_0024918",
+            "conf": 0.8088434934616089
+          }
+        ],
+        "benign->malignant": [
+          {
+            "image": "ISIC_0024424",
+            "conf": 0.6419370174407959
+          },
+          {
+            "image": "ISIC_0024425",
+            "conf": 0.6373516917228699
+          },
+          {
+            "image": "ISIC_0024581",
+            "conf": 0.5565502047538757
+          },
+          {
+            "image": "ISIC_0024711",
+            "conf": 0.5423532128334045
+          },
+          {
+            "image": "ISIC_0024814",
+            "conf": 0.7396500706672668
+          },
+          {
+            "image": "ISIC_0024973",
+            "conf": 0.646735668182373
+          },
+          {
+            "image": "ISIC_0025033",
+            "conf": 0.8090927600860596
+          },
+          {
+            "image": "ISIC_0025043",
+            "conf": 0.397808313369751
+          },
+          {
+            "image": "ISIC_0025341",
+            "conf": 0.7692883610725403
+          },
+          {
+            "image": "ISIC_0025623",
+            "conf": 0.6575360298156738
+          },
+          {
+            "image": "ISIC_0025633",
+            "conf": 0.39216291904449463
+          },
+          {
+            "image": "ISIC_0026159",
+            "conf": 0.5598846673965454
+          }
+        ],
+        "malignant->miss": [
+          {
+            "image": "ISIC_0028814",
+            "conf": 0.0
+          },
+          {
+            "image": "ISIC_0030827",
+            "conf": 0.0
+          }
+        ]
+      },
+      "val_test_gap": {
+        "map50_val": 0.7678822882405771,
+        "map50_test": 0.7529951118814695,
+        "map50_drop": 0.014887176359107634,
+        "malignant_recall_val": 0.5863192182410424,
+        "malignant_recall_test": 0.5874125874125874,
+        "malignant_recall_drop": -0.0010933691715450111,
+        "benign_recall_val": 0.9221425233599864,
+        "benign_recall_test": 0.9564335953232026
+      },
+      "defects": [
+        "High malignant\u2192benign confusion (44.4%): model often calls cancer benign.",
+        "Class imbalance bias: much stronger on benign than malignant (benign_acc=95.5%, malignant_acc=54.9%)."
+      ],
+      "gate_pass": false,
+      "gate_reasons": [
+        "malignant_accuracy 0.549 < 0.75",
+        "malignant\u2192benign 0.444 > 0.2"
+      ],
+      "failure_mosaic": "B:\\myProjects\\yolo-testing-project\\runs\\generalization\\yolov3-tinyu_balanced_failures.png"
+    }
+  }
+}

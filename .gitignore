@@ -14,23 +14,31 @@ data/processed/**
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 
-runs/*
-!runs/reports/
-!runs/reports/**
 models/yolov3/
 models/yolov5/
 models/ultralytics/
 
-*.pt
+# Ignore pretrained downloads at repo root; keep trained run weights
+/*.pt
 *.pth
 *.onnx
 *.weights
 *.zip
 *.rar
 *.7z
+# last.pt is redundant with best.pt for sharing
+runs/**/weights/last.pt
 
 .DS_Store
 Thumbs.db
 
 tools/aria2/
 
+
+# Transient local logs / PIDs
+runs/*.err
+runs/*.log
+runs/detect/*.log
+runs/**/detached*.log
+runs/**/detached*.err
+runs/**/*.pid

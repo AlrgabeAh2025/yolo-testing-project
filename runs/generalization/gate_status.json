@@ -1,0 +1,65 @@
+{
+  "models": {
+    "yolov5su_balanced": {
+      "gate_pass": false,
+      "gate_reasons": [
+        "malignant_accuracy 0.717 < 0.75",
+        "malignant\u2192benign 0.276 > 0.2"
+      ],
+      "overall_class_accuracy": 0.8814814814814815,
+      "malignant_accuracy": 0.7167832167832168,
+      "benign_accuracy": 0.920767306088407,
+      "malignant_to_benign": 0.2762237762237762,
+      "benign_to_malignant": 0.07839866555462886,
+      "confusion": {
+        "benign->benign": 1104,
+        "benign->malignant": 94,
+        "benign->miss": 1,
+        "malignant->malignant": 205,
+        "malignant->benign": 79,
+        "malignant->miss": 2
+      }
+    },
+    "yolov8s_balanced": {
+      "gate_pass": false,
+      "gate_reasons": [
+        "malignant_accuracy 0.689 < 0.75",
+        "malignant\u2192benign 0.311 > 0.2"
+      ],
+      "overall_class_accuracy": 0.8808080808080808,
+      "malignant_accuracy": 0.6888111888111889,
+      "benign_accuracy": 0.926605504587156,
+      "malignant_to_benign": 0.3111888111888112,
+      "benign_to_malignant": 0.07005838198498748,
+      "confusion": {
+        "benign->benign": 1111,
+        "benign->malignant": 84,
+        "benign->miss": 4,
+        "malignant->malignant": 197,
+        "malignant->benign": 89,
+        "malignant->miss": 0
+      }
+    },
+    "yolov3-tinyu_balanced": {
+      "gate_pass": false,
+      "gate_reasons": [
+        "malignant_accuracy 0.549 < 0.75",
+        "malignant\u2192benign 0.444 > 0.2"
+      ],
+      "overall_class_accuracy": 0.8767676767676768,
+      "malignant_accuracy": 0.548951048951049,
+      "benign_accuracy": 0.9549624687239366,
+      "malignant_to_benign": 0.44405594405594406,
+      "benign_to_malignant": 0.045037531276063386,
+      "confusion": {
+        "benign->benign": 1145,
+        "benign->malignant": 54,
+        "benign->miss": 0,
+        "malignant->malignant": 157,
+        "malignant->benign": 127,
+        "malignant->miss": 2
+      }
+    }
+  },
+  "best_model": "yolov5su_balanced"
+}
