@@ -1,0 +1,8 @@
+path: B:/myProjects/yolo-testing-project/data/processed
+train: images/train
+val: images/val
+test: images/test
+nc: 2
+names:
+  0: benign
+  1: malignant

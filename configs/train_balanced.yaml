@@ -1,0 +1,44 @@
+# Balanced training recipe: stronger classification + augmentations
+# for reducing benign/malignant confusion on RTX 3060 12GB.
+
+imgsz: 640
+batch: 16
+epochs: 100
+patience: 30
+optimizer: AdamW
+cos_lr: true
+lr0: 0.001
+lrf: 0.01
+weight_decay: 0.0005
+warmup_epochs: 3.0
+seed: 42
+workers: 2
+device: 0
+amp: true
+
+# Stronger classification emphasis (tuned after first gate fail)
+cls: 2.5
+box: 7.5
+dfl: 1.5
+
+# Stronger color/geometry augmentations (rash-like appearance robustness)
+# mixup/copy_paste kept modest to avoid host RAM crashes on Windows
+hsv_h: 0.02
+hsv_s: 0.8
+hsv_v: 0.5
+degrees: 15.0
+translate: 0.12
+scale: 0.55
+shear: 0.0
+perspective: 0.0
+flipud: 0.0
+fliplr: 0.5
+mosaic: 1.0
+mixup: 0.05
+copy_paste: 0.0
+close_mosaic: 15
+
+# Evaluation
+plots: true
+save: true
+exist_ok: true

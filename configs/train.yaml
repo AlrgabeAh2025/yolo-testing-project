@@ -1,0 +1,43 @@
+# Shared training hyperparameters for fair YOLOv3/v5/v8 comparison
+# Tuned for RTX 3060 12GB + binary benign/malignant with class imbalance.
+
+imgsz: 640
+batch: 16
+epochs: 100
+patience: 25
+optimizer: AdamW
+cos_lr: true
+lr0: 0.001
+lrf: 0.01
+weight_decay: 0.0005
+warmup_epochs: 3.0
+seed: 42
+workers: 4
+device: 0
+amp: true
+
+# Emphasize classification to reduce benign/malignant confusion
+cls: 1.5
+box: 7.5
+dfl: 1.5
+
+# Generalization augmentations
+hsv_h: 0.015
+hsv_s: 0.7
+hsv_v: 0.4
+degrees: 10.0
+translate: 0.1
+scale: 0.5
+shear: 0.0
+perspective: 0.0
+flipud: 0.0
+fliplr: 0.5
+mosaic: 1.0
+mixup: 0.1
+copy_paste: 0.0
+close_mosaic: 15
+
+# Evaluation
+plots: true
+save: true
+exist_ok: true
