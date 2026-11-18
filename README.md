@@ -132,6 +132,21 @@ Notes:
 - Full `yolov3u` is too heavy for RTX 3060 12GB checkpointing; use `yolov3-tinyu`.
 - Comparison metrics: `runs/compare_summary.json` and `runs/reports/model_comparison_report.md`.
 
+## Google Colab
+
+Notebook ready for retrain / inference:
+
+- [`notebooks/YOLO_HAM10000_Colab.ipynb`](notebooks/YOLO_HAM10000_Colab.ipynb)
+
+Open directly:
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AlrgabeAh2025/yolo-testing-project/blob/main/notebooks/YOLO_HAM10000_Colab.ipynb)
+
+The notebook is split into:
+1. setup + dataset download
+2. **Training** section (retrain balanced models)
+3. **Run / Inference** section (load `best.pt` and predict)
+
 ## Disclaimer
 
 Research / educational use only. Not a medical device and not for clinical diagnosis.
