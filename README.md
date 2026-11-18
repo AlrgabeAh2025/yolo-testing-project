@@ -145,7 +145,7 @@ Open directly:
 The notebook is split into:
 1. setup + dataset download
 2. **Training** section (retrain balanced models)
-3. **Run / Inference** section (load `best.pt` and predict)
+3. **Gradio** section (choose model, upload image, run interactive test)
 
 ## Disclaimer
 
